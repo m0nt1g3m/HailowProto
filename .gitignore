@@ -1,0 +1,19 @@
+.env
+
+# Others
+~$*
+*~
+CodeCoverage/
+
+# Rider / JetBrains
+.idea/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.vspscc
+
+# OS
+.DS_Store
+Thumbs.db
