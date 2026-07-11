@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ProductService.v1;
+
+import "ProductService/v1/product_request.proto";
+import "ProductService/v1/product_response.proto";
+
+option go_package = "ProductService/v1;ProductService";
+
+service Product {
+    rpc Create(ProductService.v1.CreateRequest) returns (ProductService.v1.CreateResponse);
+    rpc Delete(ProductService.v1.DeleteRequest) returns (ProductService.v1.DeleteResponse);
+}

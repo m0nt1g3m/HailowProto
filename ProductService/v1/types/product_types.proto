@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ProductService.v1.types;
+
+import "ProductService/v1/types/category_types.proto";
+
+option go_package = "ProductService/v1;ProductService";
+
+message ProductDraft {
+    string name = 1;
+    ProductService.v1.types.Category category = 2;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    ProductService.v1.types.Category category = 3;
+}

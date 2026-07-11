@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  build_go:
+    desc: Build proto files for Go.
+    cmds:
+      - protoc --proto_path=./ --go_out=./build/go ./ProductService/v1/product_service.proto ./ProductService/v1/product_request.proto ./ProductService/v1/product_response.proto ./ProductService/v1/types/category_types.proto ./ProductService/v1/types/product_types.proto

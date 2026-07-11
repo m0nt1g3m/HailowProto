@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth;
+package auth_service;
 
 // C# settings
 option csharp_namespace = "HailowApiGateway.Protos";

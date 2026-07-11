@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ProductService.v1;
+
+import "ProductService/v1/types/product_types.proto";
+
+option go_package = "ProductService/v1;ProductService";
+
+message CreateRequest {
+    ProductService.v1.types.ProductDraft product = 1;
+}
+
+message GetRequest {
+    ProductService.v1.types.Product product = 1;
+}
+
+message DeleteRequest {
+    string id = 1;
+}
