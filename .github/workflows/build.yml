@@ -12,35 +12,44 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.26
-
-      - name: Add go/bin to PATH
-        run: |
-          echo 'export PATH=$PATH:/home/runner/go/bin' >> $GITHUB_ENV
-        env:
-          GITHUB_ENV: ${{ github.env.GITHUB_ENV }}
-
-      - name: Install taskfile
-        run: |
-
-  build_dotnet:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
         with:
-          dotnet-version: "10.0.0"
+          go-version: "1.23"
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Install protoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y protobuf-compiler
 
-      - name: Build project (Compiles Proto files)
-        run: dotnet build --configuration Release --no-restore
+      - name: Install Task & Go Protoc Plugins
+        run: |
+          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+          
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+          
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+      - name: Run Task build / proto generation
+        run: |
+          task build_go
+
+  # build_dotnet:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+
+  #     - name: Setup .NET
+  #       uses: actions/setup-dotnet@v4
+  #       with:
+  #         dotnet-version: "10.0.0"
+
+  #     - name: Restore dependencies
+  #       run: dotnet restore
+
+  #     - name: Build proto files
+  #       run: dotnet build --configuration Release --no-restore
