@@ -17,14 +17,17 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.17
+          go-version: 1.26
 
       - name: Add go/bin to PATH
         run: |
           echo 'export PATH=$PATH:/home/runner/go/bin' >> $GITHUB_ENV
         env:
           GITHUB_ENV: ${{ github.env.GITHUB_ENV }}
-          steps:
+
+      - name: Install taskfile
+        run: |
+
   build_dotnet:
     steps:
       - name: Checkout repository
@@ -33,7 +36,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.28"
+          dotnet-version: "10.0.0"
 
       - name: Restore dependencies
         run: dotnet restore

@@ -4,6 +4,7 @@ package ProductService.v1.types;
 
 import "ProductService/v1/types/category_types.proto";
 
+
 option go_package = "ProductService/v1;ProductService";
 
 message ProductDraft {
