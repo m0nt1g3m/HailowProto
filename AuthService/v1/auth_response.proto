@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package AuthService.v1;
+
+import "AuthService/v1/types/auth_types.proto";
+
+// option csharp_namespace = "HailowApiGateway.Protos";
+option go_package = "AuthService/v1;AuthService";
+
+message SignUpResponse {
+    types.User user = 1;
+}
+
+message SignInResponse {
+    types.User user = 1;
+    types.TokenPair tokens = 2;
+}
+
+message RefreshTokensResponse {
+    types.TokenPair tokens = 1;
+}
+
+message ValidateTokenResponse {
+    bool is_valid = 1;
+    types.User user = 2;
+}
+
+message LogoutResponse {
+    bool success = 1;
+}
+
+message RevokeSessionResponse {
+    bool success = 1;
+}
+
+message GetUserSessionsResponse {
+    repeated types.Session sessions = 1;
+}

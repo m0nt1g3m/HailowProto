@@ -1,37 +1,21 @@
 syntax = "proto3";
 
-package auth_service;
+package AuthService.v1;
 
-// C# settings
-option csharp_namespace = "HailowApiGateway.Protos";
-// Go settings
-option go_package = "github.com/hailow/auth-service/proto";
+import "AuthService/v1/auth_request.proto";
+import "AuthService/v1/auth_response.proto";
+
+// option csharp_namespace = "HailowApiGateway.Protos";
+option go_package = "AuthService/v1;AuthService";
 
 service AuthService {
-    rpc Register (RegisterRequest) returns (RegisterResponse);
-    rpc Login (LoginRequest) returns (LoginResponse);
-}
+    rpc SignUp(SignUpRequest) returns (SignUpResponse);
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+    rpc RefreshTokens(RefreshTokensRequest) returns (RefreshTokensResponse);
+    rpc Logout(LogoutRequest) returns (LogoutResponse);
 
-message RegisterRequest {
-    string name = 1;
-    string email = 2;
-    string password = 3;
-}
+    rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
 
-message RegisterResponse {
-    string user_id = 1;
-    string name = 2;
-    string email = 3;
-}
-
-message LoginRequest {
-    string email = 1;
-    string password = 2;
-}
-
-message LoginResponse {
-    string user_id = 1;
-    string name = 2;
-    string email = 3;
-    string token = 4;
+    rpc GetUserSessions(GetUserSessionsRequest) returns (GetUserSessionsResponse);
+    rpc RevokeSession(RevokeSessionRequest) returns (RevokeSessionResponse);
 }

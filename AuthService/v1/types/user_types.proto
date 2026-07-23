@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package AuthService.v1.types;
+
+import "google/protobuf/timestamp.proto";
+
+// option csharp_namespace = "HailowApiGateway.Protos";
+option go_package = "AuthService/v1;AuthService";
+
+message User {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    Role role = 5;
+    AuthProvider provider = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}

@@ -4,12 +4,26 @@ package ProductService.v1;
 
 import "ProductService/v1/types/product_types.proto";
 
+// option csharp_namespace = "HailowApiGateway.Protos";
 option go_package = "ProductService/v1;ProductService";
 
 message CreateResponse {
-    ProductService.v1.types.Product product = 1;
+    types.Product product = 1;
+}
+
+message GetResponse {
+    types.Product product = 1;
+}
+
+message UpdateResponse {
+    types.Product product = 1;
+}
+
+message ListResponse {
+    repeated types.Product products = 1;
+    int32 total = 2;
 }
 
 message DeleteResponse {
-    string id = 1;
+    bool success = 1;
 }

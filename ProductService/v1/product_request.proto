@@ -4,14 +4,24 @@ package ProductService.v1;
 
 import "ProductService/v1/types/product_types.proto";
 
+// option csharp_namespace = "HailowApiGateway.Protos";
 option go_package = "ProductService/v1;ProductService";
 
 message CreateRequest {
-    ProductService.v1.types.ProductDraft product = 1;
+    types.ProductDraft product = 1;
 }
 
 message GetRequest {
-    ProductService.v1.types.Product product = 1;
+    string id = 1;
+}
+
+message UpdateRequest {
+    types.Product product = 1;
+}
+
+message ListRequest {
+    int32 offset = 1;
+    int32 limit = 2;
 }
 
 message DeleteRequest {

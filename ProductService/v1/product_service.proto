@@ -5,9 +5,13 @@ package ProductService.v1;
 import "ProductService/v1/product_request.proto";
 import "ProductService/v1/product_response.proto";
 
+// option csharp_namespace = "HailowApiGateway.Protos";
 option go_package = "ProductService/v1;ProductService";
 
-service Product {
-    rpc Create(ProductService.v1.CreateRequest) returns (ProductService.v1.CreateResponse);
-    rpc Delete(ProductService.v1.DeleteRequest) returns (ProductService.v1.DeleteResponse);
+service ProductService {
+    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Get(GetRequest) returns (GetResponse);
+    rpc Update(UpdateRequest) returns (UpdateResponse);
+    rpc List(ListRequest) returns (ListResponse);
+    rpc Delete(DeleteRequest) returns (DeleteResponse);
 }

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package AuthService.v1.types;
+
+import "google/protobuf/timestamp.proto";
+
+// option csharp_namespace = "HailowApiGateway.Protos";
+option go_package = "AuthService/v1;AuthService";
+
+enum Role {
+    ROLE_UNSPECIFIED = 0;
+    ROLE_CUSTOMER = 1;
+    ROLE_SELLER = 2;
+    ROLE_ADMIN = 3;
+}
+
+enum AuthProvider {
+    AUTH_PROVIDER_UNSPECIFIED = 0;
+    AUTH_PROVIDER_LOCAL = 1;
+}
+
+message TokenPair {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message Session {
+    string id = 1;
+    string user_id = 2;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp expires_at = 6;
+}

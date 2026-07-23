@@ -3,17 +3,49 @@ syntax = "proto3";
 package ProductService.v1.types;
 
 import "ProductService/v1/types/category_types.proto";
+import "ProductService/v1/types/brand_types.proto";
+import "google/protobuf/timestamp.proto";
 
+// option csharp_namespace = "HailowApiGateway.Protos";
+option go_package = "ProductService/v1/types;types";
 
-option go_package = "ProductService/v1;ProductService";
+message ProductAttribute {
+    string key = 1;
+    string value = 2;
+}
+
+message ProductVariant {
+    string id = 1;
+    string sku = 2;
+    double price = 3;
+    optional int32 stock = 4;
+    repeated string photos = 5;
+    repeated ProductAttribute attributes = 6;
+}
 
 message ProductDraft {
     string name = 1;
-    ProductService.v1.types.Category category = 2;
+    optional string description = 2;
+    Brand brand = 3;
+    Category category = 4;
+    repeated ProductVariant variants = 5;
+}
+
+message ProductVariantDraft {
+    string sku = 1;
+    double price = 2;
+    optional int32 stock = 3;
+    repeated string photos = 4;
+    repeated ProductAttribute attributes = 5;
 }
 
 message Product {
     string id = 1;
     string name = 2;
-    ProductService.v1.types.Category category = 3;
+    optional string description = 3;
+    Brand brand = 4;
+    Category category = 5;
+    repeated ProductVariant variants = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp expires_at = 8;
 }
