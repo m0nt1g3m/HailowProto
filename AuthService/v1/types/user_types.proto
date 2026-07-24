@@ -13,7 +13,6 @@ message User {
     string last_name = 3;
     string email = 4;
     Role role = 5;
-    AuthProvider provider = 6;
-    google.protobuf.Timestamp created_at = 7;
-    google.protobuf.Timestamp updated_at = 8;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
 }

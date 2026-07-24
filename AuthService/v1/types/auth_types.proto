@@ -14,11 +14,6 @@ enum Role {
     ROLE_ADMIN = 3;
 }
 
-enum AuthProvider {
-    AUTH_PROVIDER_UNSPECIFIED = 0;
-    AUTH_PROVIDER_LOCAL = 1;
-}
-
 message TokenPair {
     string access_token = 1;
     string refresh_token = 2;
