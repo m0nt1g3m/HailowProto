@@ -15,8 +15,6 @@ message SignUpRequest {
 message SignInRequest {
     string email = 1;
     string password = 2;
-    optional string user_agent = 3;
-    optional string ip_address = 4;
 }
 
 message RefreshTokensRequest {
