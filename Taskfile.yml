@@ -14,5 +14,5 @@ tasks:
     desc: Build proto files for Go.
     cmds:
       - mkdir -p ./build/go
-      - protoc --proto_path=./ --go_out=./build/go $(find ProductService -name "*.proto")
-      - protoc --proto_path=./ --go_out=./build/go $(find AuthService -name "*.proto")
+      - protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find ProductService -name "*.proto")
+      - protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find AuthService -name "*.proto")
