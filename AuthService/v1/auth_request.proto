@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package AuthService.v1;
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
 message SignUpRequest {

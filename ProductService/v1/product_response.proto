@@ -4,7 +4,7 @@ package ProductService.v1;
 
 import "ProductService/v1/types/product_types.proto";
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.ProductService";
 option go_package = "ProductService/v1;ProductService";
 
 message CreateResponse {

@@ -6,7 +6,7 @@ import "ProductService/v1/types/category_types.proto";
 import "ProductService/v1/types/brand_types.proto";
 import "google/protobuf/timestamp.proto";
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.ProductService.Types";
 option go_package = "ProductService/v1/types;types";
 
 message ProductAttribute {

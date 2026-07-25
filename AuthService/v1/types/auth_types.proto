@@ -4,7 +4,7 @@ package AuthService.v1.types;
 
 import "google/protobuf/timestamp.proto";
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.AuthService.Types";
 option go_package = "AuthService/v1;AuthService";
 
 enum Role {

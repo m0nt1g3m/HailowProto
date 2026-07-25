@@ -5,7 +5,7 @@ package AuthService.v1;
 import "AuthService/v1/auth_request.proto";
 import "AuthService/v1/auth_response.proto";
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
 service AuthService {

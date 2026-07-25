@@ -5,7 +5,7 @@ package AuthService.v1;
 import "AuthService/v1/types/user_types.proto";
 import "AuthService/v1/types/auth_types.proto";
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
 message SignUpResponse {

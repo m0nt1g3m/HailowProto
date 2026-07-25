@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ProductService.v1.types;
 
-// option csharp_namespace = "HailowApiGateway.Protos";
+option csharp_namespace = "HailowApiGateway.Protos.ProductService.Types";
 option go_package = "ProductService/v1;ProductService";
 
 message Category {
