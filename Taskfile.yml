@@ -7,12 +7,12 @@ dotenv: ['.env']
 
 vars:
   MIGRATIONS_PATH: './migrations'
-  DB_URL: 'postgresql://{{.POSTGRES_USER}}:{{.POSTGRES_PASSWORD}}@{{.POSTGRES_HOST}}:{{.POSTGRES_PORT}}/{{.POSTGRES_DB}}?sslmode=disable'
+  DATABASE_URL: 'postgresql://{{.POSTGRES_USER}}:{{.POSTGRES_PASSWORD}}@{{.POSTGRES_HOST}}:{{.POSTGRES_PORT}}/{{.POSTGRES_DB}}?sslmode=disable'
 
 tasks:
   build_go:
     desc: Build proto files for Go.
     cmds:
       - mkdir -p ./build/go
-      - protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find ProductService -name "*.proto")
-      - protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find AuthService -name "*.proto")
+      - PATH="$(go env GOPATH)/bin:$PATH" protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find ProductService -name "*.proto")
+      - PATH="$(go env GOPATH)/bin:$PATH" protoc --proto_path=./ --go_out=./build/go --go-grpc_out=./build/go $(find AuthService -name "*.proto")
