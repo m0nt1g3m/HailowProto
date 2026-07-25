@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package AuthService.v1;
 
-import "AuthService/v1/types/auth_types.proto";
-
 // option csharp_namespace = "HailowApiGateway.Protos";
 option go_package = "AuthService/v1;AuthService";
 
