@@ -8,32 +8,30 @@ import "AuthService/v1/types/auth_types.proto";
 option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
-message SignUpResponse {
+message ModeratorSignUpResponse {
+    AuthService.v1.types.User user = 1;
+}
+
+message SellerSignUpResponse {
+    AuthService.v1.types.User user = 1;
+}
+
+message CustomerSignUpResponse {
     AuthService.v1.types.User user = 1;
 }
 
 message SignInResponse {
-    AuthService.v1.types.User user = 1;
-    AuthService.v1.types.TokenPair tokens = 2;
+    AuthService.v1.types.TokenPair tokens = 1;
 }
 
 message RefreshTokensResponse {
-    AuthService.v1.types.TokenPair tokens = 1;
+    string access_token = 1;
 }
 
 message ValidateTokenResponse {
     bool is_valid = 1;
-    AuthService.v1.types.User user = 2;
 }
 
 message LogoutResponse {
     bool success = 1;
-}
-
-message RevokeSessionResponse {
-    bool success = 1;
-}
-
-message GetUserSessionsResponse {
-    repeated AuthService.v1.types.Session sessions = 1;
 }

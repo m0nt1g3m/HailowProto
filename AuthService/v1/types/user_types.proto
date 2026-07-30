@@ -10,7 +10,7 @@ option go_package = "AuthService/v1;AuthService";
 
 message User {
     string id = 1;
-    string avatar_url = 2;
+    optional string avatar = 2;
     string first_name = 3;
     string last_name = 4;
     string email = 5;
@@ -18,3 +18,15 @@ message User {
     google.protobuf.Timestamp created_at = 7;
     google.protobuf.Timestamp updated_at = 8;
 }
+
+message Seller {
+    string id = 1;
+    string user_id = 2;
+    optional string logo = 3;
+    string store_name = 4;
+    string store_description = 5;
+    bool is_active = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}
+

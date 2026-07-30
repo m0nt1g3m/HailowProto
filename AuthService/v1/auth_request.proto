@@ -5,9 +5,25 @@ package AuthService.v1;
 option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
-message SignUpRequest {
-    string email = 1;
-    string password = 2;
+message ModeratorSignUpRequest {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message SellerSignUpRequest {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message CustomerSignUpRequest {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    string password = 4;
 }
 
 message SignInRequest {
@@ -25,13 +41,4 @@ message ValidateTokenRequest {
 
 message LogoutRequest {
     string refresh_token = 1;
-}
-
-message RevokeSessionRequest {
-    string user_id = 1;
-    string session_id = 2;
-}
-
-message GetUserSessionsRequest {
-    string user_id = 1;
 }
