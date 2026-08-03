@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+import "SellerService/v1/types/seller_types.proto";
+import "SellerService/v1/types/auth_types.proto";
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+message SignUpResponse {
+    SellerService.v1.types.Seller user = 1;
+}
+
+message SignInResponse {
+    SellerService.v1.types.TokenPair tokens = 1;
+}
+
+message RefreshTokensResponse {
+    string access_token = 1;
+}
+
+message ValidateTokenResponse {
+    bool is_valid = 1;
+}
+
+message UploadStoreLogoResponse {
+    string logo_url = 1;
+}
+
+message LogoutResponse {
+    bool success = 1;
+}

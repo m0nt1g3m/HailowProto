@@ -9,9 +9,11 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "HailowApiGateway.Protos.ProductService.Types";
 option go_package = "ProductService/v1/types;types";
 
-message ProductAttribute {
+message CategoryAttribute {
     string key = 1;
     string value = 2;
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
 }
 
 message ProductVariant {
@@ -20,7 +22,9 @@ message ProductVariant {
     double price = 3;
     optional int32 stock = 4;
     repeated string photos = 5;
-    repeated ProductAttribute attributes = 6;
+    repeated CategoryAttribute attributes = 6;
+    google.protobuf.Timestamp created_at = 14;
+    google.protobuf.Timestamp updated_at = 15;
 }
 
 message ProductDraft {
@@ -36,7 +40,7 @@ message ProductVariantDraft {
     double price = 2;
     optional int32 stock = 3;
     repeated string photos = 4;
-    repeated ProductAttribute attributes = 5;
+    repeated CategoryAttribute attributes = 5;
 }
 
 message Product {

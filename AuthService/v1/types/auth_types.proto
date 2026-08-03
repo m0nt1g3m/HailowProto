@@ -8,8 +8,7 @@ option go_package = "AuthService/v1;AuthService";
 enum Role {
     ROLE_UNSPECIFIED = 0;
     ROLE_CUSTOMER = 1;
-    ROLE_SELLER = 2;
-    ROLE_MODERATOR = 3;
+    ROLE_ADMIN = 2;
 }
 
 message TokenPair {

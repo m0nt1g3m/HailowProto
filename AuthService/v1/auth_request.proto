@@ -5,25 +5,34 @@ package AuthService.v1;
 option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
-message ModeratorSignUpRequest {
-    string first_name = 1;
-    string last_name = 2;
-    string email = 3;
-    string password = 4;
-}
+import "AuthService/v1/types/user_types.proto";
 
-message SellerSignUpRequest {
+message AdminSignUpRequest {
     string first_name = 1;
     string last_name = 2;
     string email = 3;
-    string password = 4;
+    string phone_number = 4;
+    string city = 5;
+    string street = 6;
+    string building = 7;
+    optional int32 porch = 8;
+    optional int32 floor = 9;
+    optional int32 flat = 10;
+    string password = 11;
 }
 
 message CustomerSignUpRequest {
     string first_name = 1;
     string last_name = 2;
     string email = 3;
-    string password = 4;
+    string phone_number = 4;
+    string city = 5;
+    string street = 6;
+    string building = 7;
+    optional int32 porch = 8;
+    optional int32 floor = 9;
+    optional int32 flat = 10;
+    string password = 11;
 }
 
 message SignInRequest {
@@ -39,6 +48,15 @@ message ValidateTokenRequest {
     string access_token = 1;
 }
 
+message UploadAvatarRequest {
+    string user_id = 1;
+    bytes avatar_image = 2;
+}
+
 message LogoutRequest {
     string refresh_token = 1;
+}
+
+message UpdateUserInfoRequest {
+    AuthService.v1.types.User user = 1;
 }

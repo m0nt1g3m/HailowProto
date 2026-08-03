@@ -9,12 +9,12 @@ option csharp_namespace = "HailowApiGateway.Protos.AuthService";
 option go_package = "AuthService/v1;AuthService";
 
 service AuthService {
-    rpc ModeratorSignUp(ModeratorSignUpRequest) returns (ModeratorSignUpResponse);
-    rpc SellerSignUp(SellerSignUpRequest) returns (SellerSignUpResponse);
     rpc CustomerSignUp(CustomerSignUpRequest) returns (CustomerSignUpResponse);
+    rpc AdminSignUp(AdminSignUpRequest) returns (AdminSignUpResponse);
     rpc SignIn(SignInRequest) returns (SignInResponse);
     rpc RefreshTokens(RefreshTokensRequest) returns (RefreshTokensResponse);
     rpc Logout(LogoutRequest) returns (LogoutResponse);
-
+    rpc UploadAvatar(UploadAvatarRequest) returns (UploadAvatarResponse);
+    rpc UpdateUserInfo(UpdateUserInfoRequest) returns (UpdateUserInfoResponse);
     rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
 }

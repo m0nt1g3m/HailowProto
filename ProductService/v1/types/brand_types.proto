@@ -2,10 +2,14 @@ syntax = "proto3";
 
 package ProductService.v1.types;
 
+import "google/protobuf/timestamp.proto";
+
 option csharp_namespace = "HailowApiGateway.Protos.ProductService.Types";
 option go_package = "ProductService/v1;ProductService";
 
 message Brand {
     string id = 1;
     string name = 2;
+    google.protobuf.Timestamp created_at = 3;
+    google.protobuf.Timestamp updated_at = 4;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package SellerService.v1.types;
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService.Types";
+option go_package = "SellerService/v1;SellerService";
+
+message TokenPair {
+    string access_token = 1;
+    string refresh_token = 2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+import "SellerService/v1/seller_request.proto";
+import "SellerService/v1/seller_response.proto";
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+service SellerService {
+    rpc SignUp(SignUpRequest) returns (SignUpResponse);
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+    rpc RefreshTokens(RefreshTokensRequest) returns (RefreshTokensResponse);
+    rpc Logout(LogoutRequest) returns (LogoutResponse);
+    rpc UploadAvatar(UploadAvatarRequest) returns (UploadAvatarResponse);
+    rpc UploadStoreLogo(UploadStoreLogoRequest) returns (UploadStoreLogoResponse);
+    rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+}

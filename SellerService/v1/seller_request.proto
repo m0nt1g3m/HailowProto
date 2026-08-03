@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+message SignUpRequest {
+    string store_name = 1;
+    string store_description = 2;
+    optional string logo_url = 3;
+    string tin = 4;
+    string kpp = 5;
+    string organization_form = 6;
+    string psrn = 7;
+    int32 city = 8;
+    int32 street = 9;
+    int32 building = 10;
+}
