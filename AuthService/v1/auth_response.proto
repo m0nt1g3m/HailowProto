@@ -32,10 +32,26 @@ message UploadAvatarResponse {
     string avatar_url = 1;
 } 
 
-message LogoutResponse {
+message UpdateProfileResponse {
+    AuthService.v1.types.User user = 1;
+}
+
+message UpdateDeliveryInfoResponse {
+    AuthService.v1.types.User user = 1;
+}
+
+message UpdatePasswordResponse {
     bool success = 1;
 }
 
-message UpdateUserInfoResponse {
+message GetProfileResponse {
     AuthService.v1.types.User user = 1;
+}
+
+message DeleteAccountResponse {
+    bool success = 1;
+}
+
+message LogoutResponse {
+    bool success = 1;
 }
