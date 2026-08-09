@@ -3,25 +3,32 @@ syntax = "proto3";
 package SellerService.v1.types;
 
 import "google/protobuf/timestamp.proto";
-import "AuthService/v1/types/auth_types.proto";
 
 option csharp_namespace = "HailowApiGateway.Protos.SellerService.Types";
 option go_package = "SellerService/v1;SellerService";
 
+enum OrganizationForm {
+    ORGANIZATION_FORM_UNSPECIFIED = 0;
+    LLC = 1; // Limited Liability Company (ООО)
+    JSC = 2; // Joint Stock Company (АО)
+    OOO = 3; // Open Joint-Stock Company (ПАО)
+    IP = 4; // Individual Entrepreneur (ИП)
+}
+
 message Seller {
     string id = 1;
-    optional string avatar_url = 2;
-    string first_name = 3;
-    string last_name = 4;
-    string email = 5;
-    string phone_number = 6;
-    string city = 7;
-    string street = 8;
-    string building = 9;
-    optional int32 porch = 10;
-    optional int32 floor = 11;
-    optional int32 flat = 12;
-    Role role = 13;
+    optional string logo_url = 2;
+    string store_name = 3;
+    string store_description = 4;
+    bool is_active = 5;
+    string tin = 6;
+    string psrn = 7;
+    string kpp = 8;
+    OrganizationForm organization_form = 9;
+    string email = 10;
+    string city = 11;
+    string street = 12;
+    string building = 13;
     google.protobuf.Timestamp created_at = 14;
     google.protobuf.Timestamp updated_at = 15;
 }

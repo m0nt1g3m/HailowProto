@@ -13,7 +13,12 @@ service SellerService {
     rpc SignIn(SignInRequest) returns (SignInResponse);
     rpc RefreshTokens(RefreshTokensRequest) returns (RefreshTokensResponse);
     rpc Logout(LogoutRequest) returns (LogoutResponse);
-    rpc UploadAvatar(UploadAvatarRequest) returns (UploadAvatarResponse);
     rpc UploadStoreLogo(UploadStoreLogoRequest) returns (UploadStoreLogoResponse);
     rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+    rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+    rpc UpdateLocationInfo(UpdateLocationInfoRequest) returns (UpdateLocationInfoResponse);
+    rpc SetActiveStatus(SetActiveStatusRequest) returns (SetActiveStatusResponse);
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+    rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse);
 }

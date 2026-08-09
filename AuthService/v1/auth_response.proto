@@ -40,7 +40,7 @@ message UpdateDeliveryInfoResponse {
     AuthService.v1.types.User user = 1;
 }
 
-message UpdatePasswordResponse {
+message ResetPasswordResponse {
     bool success = 1;
 }
 

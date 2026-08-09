@@ -2,18 +2,80 @@ syntax = "proto3";
 
 package SellerService.v1;
 
+import "SellerService/v1/types/seller_types.proto";
+
 option csharp_namespace = "HailowApiGateway.Protos.SellerService";
 option go_package = "SellerService/v1;SellerService";
 
 message SignUpRequest {
     string store_name = 1;
     string store_description = 2;
-    optional string logo_url = 3;
+    string email = 3;
     string tin = 4;
-    string kpp = 5;
-    string organization_form = 6;
-    string psrn = 7;
+    string psrn = 5;
+    string kpp = 6;
+    SellerService.v1.types.OrganizationForm organization_form = 7;
     int32 city = 8;
     int32 street = 9;
     int32 building = 10;
+}
+
+message SignInRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RefreshTokensRequest {
+    string refresh_token = 1;
+}
+
+message ValidateTokenRequest {
+    string access_token = 1;
+}
+
+message UploadStoreLogoRequest {
+    string user_id = 1;
+    bytes logo_image = 2;
+}
+
+message UpdateProfileRequest {
+    string id = 1;
+    string store_name = 2;
+    string store_description = 3;
+    string email = 4;
+    SellerService.v1.types.OrganizationForm organization_form = 5;
+    string tin = 6;
+    string psrn = 7;
+    string kpp = 8;
+}
+
+message UpdateLocationInfoRequest {
+    string id = 1;
+    string city = 2;
+    string street = 3;
+    string building = 4;
+}
+
+message SetActiveStatusRequest {
+    string id = 1;
+    bool is_active = 2;
+}
+
+message ResetPasswordRequest {
+    string id = 1;
+    string email = 2;
+    string old_password = 3;
+    string new_password = 4;
+}
+
+message GetProfileRequest {
+    string id = 1;
+}
+
+message DeleteAccountRequest {
+    string id = 1;
+}
+
+message LogoutRequest {
+    string refresh_token = 1;
 }

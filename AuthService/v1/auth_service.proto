@@ -18,7 +18,7 @@ service AuthService {
     rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
     rpc UpdateDeliveryInfo(UpdateDeliveryInfoRequest) returns (UpdateDeliveryInfoResponse);
     rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
-    rpc ResetPassword(ResetPasswordRequest) returns (UpdatePasswordResponse);
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
     rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
     rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse);
 }
