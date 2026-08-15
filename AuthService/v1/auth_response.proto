@@ -17,7 +17,8 @@ message CustomerSignUpResponse {
 }
 
 message SignInResponse {
-    AuthService.v1.types.TokenPair tokens = 1;
+    string id = 1;
+    AuthService.v1.types.TokenPair tokens = 2;
 }
 
 message RefreshTokensResponse {
