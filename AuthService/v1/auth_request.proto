@@ -85,5 +85,4 @@ message DeleteAccountRequest {
 }
 
 message LogoutRequest {
-    string refresh_token = 1;
 }
