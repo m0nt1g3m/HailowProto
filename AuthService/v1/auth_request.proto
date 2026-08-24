@@ -72,12 +72,10 @@ message UpdateDeliveryInfoRequest {
 message ResetPasswordRequest {
     string id = 1;
     string email = 2;
-    string old_password = 3;
-    string new_password = 4;
+    string new_password = 3;
 }
 
 message GetProfileRequest {
-    string id = 1;
 }
 
 message DeleteAccountRequest {
