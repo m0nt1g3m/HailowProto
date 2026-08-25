@@ -15,8 +15,8 @@ message SignUpRequest {
     string psrn = 5;
     string kpp = 6;
     SellerService.v1.types.OrganizationForm organization_form = 7;
-    int32 city = 8;
-    int32 street = 9;
+    string city = 8;
+    string street = 9;
     int32 building = 10;
 }
 
