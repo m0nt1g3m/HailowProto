@@ -76,6 +76,7 @@ message ResetPasswordRequest {
 }
 
 message GetProfileRequest {
+    string id = 1;
 }
 
 message DeleteAccountRequest {

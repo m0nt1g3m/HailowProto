@@ -8,7 +8,7 @@ option csharp_namespace = "HailowApiGateway.Protos.SellerService.Types";
 option go_package = "SellerService/v1;SellerService";
 
 enum OrganizationForm {
-    ORGANIZATION_FORM_UNSPECIFIED = 0;
+    UNSPECIFIED = 0;
     LLC = 1; // Limited Liability Company (ООО)
     JSC = 2; // Joint Stock Company (АО)
     OOO = 3; // Open Joint-Stock Company (ПАО)

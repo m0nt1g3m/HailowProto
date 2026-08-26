@@ -17,7 +17,8 @@ message SignUpRequest {
     SellerService.v1.types.OrganizationForm organization_form = 7;
     string city = 8;
     string street = 9;
-    int32 building = 10;
+    string building = 10;
+    string password = 11;
 }
 
 message SignInRequest {
@@ -26,11 +27,10 @@ message SignInRequest {
 }
 
 message RefreshTokensRequest {
-    string refresh_token = 1;
 }
 
 message ValidateTokenRequest {
-    string access_token = 1;
+    string id = 1;
 }
 
 message UploadStoreLogoRequest {
@@ -64,7 +64,6 @@ message SetActiveStatusRequest {
 message ResetPasswordRequest {
     string id = 1;
     string email = 2;
-    string old_password = 3;
     string new_password = 4;
 }
 
@@ -77,5 +76,4 @@ message DeleteAccountRequest {
 }
 
 message LogoutRequest {
-    string refresh_token = 1;
 }
