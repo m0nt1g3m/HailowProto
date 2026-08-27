@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+import "SellerService/v1/types/seller_types.proto";
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+message UploadStoreLogoResponse {
+    string logo_url = 1;
+}
+
+message UpdateProfileResponse {
+    SellerService.v1.types.Seller seller = 1;
+}
+
+message SetActiveStatusResponse {
+    SellerService.v1.types.Seller seller = 1;
+}
+
+message UpdateLocationInfoResponse {
+    SellerService.v1.types.Seller seller = 1;
+}
+
+message GetProfileResponse {
+    SellerService.v1.types.Seller seller = 1;
+}
+
+message DeleteAccountResponse {
+    bool success = 1;
+}

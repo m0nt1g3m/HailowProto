@@ -25,31 +25,7 @@ message ValidateTokenResponse {
     bool is_valid = 1;
 }
 
-message UploadStoreLogoResponse {
-    string logo_url = 1;
-}
-
-message UpdateProfileResponse {
-    SellerService.v1.types.Seller seller = 1;
-}
-
-message SetActiveStatusResponse {
-    SellerService.v1.types.Seller seller = 1;
-}
-
-message UpdateLocationInfoResponse {
-    SellerService.v1.types.Seller seller = 1;
-}
-
 message ResetPasswordResponse {
-    bool success = 1;
-}
-
-message GetProfileResponse {
-    SellerService.v1.types.Seller seller = 1;
-}
-
-message DeleteAccountResponse {
     bool success = 1;
 }
 

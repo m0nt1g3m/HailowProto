@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+import "SellerService/v1/profile_request.proto";
+import "SellerService/v1/profile_response.proto";
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+service SellerProfileService {
+    rpc UploadStoreLogo(UploadStoreLogoRequest) returns (UploadStoreLogoResponse);
+    rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+    rpc UpdateLocationInfo(UpdateLocationInfoRequest) returns (UpdateLocationInfoResponse);
+    rpc SetActiveStatus(SetActiveStatusRequest) returns (SetActiveStatusResponse);
+    rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+    rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse);
+}

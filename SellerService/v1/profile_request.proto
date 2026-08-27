@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package SellerService.v1;
+
+import "SellerService/v1/types/seller_types.proto";
+
+option csharp_namespace = "HailowApiGateway.Protos.SellerService";
+option go_package = "SellerService/v1;SellerService";
+
+message UploadStoreLogoRequest {
+    string user_id = 1;
+    bytes logo_image = 2;
+}
+
+message UpdateProfileRequest {
+    string id = 1;
+    string store_name = 2;
+    string store_description = 3;
+    string email = 4;
+    SellerService.v1.types.OrganizationForm organization_form = 5;
+    string tin = 6;
+    string psrn = 7;
+    string kpp = 8;
+}
+
+message UpdateLocationInfoRequest {
+    string id = 1;
+    string city = 2;
+    string street = 3;
+    string building = 4;
+}
+
+message SetActiveStatusRequest {
+    string id = 1;
+    bool is_active = 2;
+}
+
+message GetProfileRequest {
+    string id = 1;
+}
+
+message DeleteAccountRequest {
+    string id = 1;
+}
