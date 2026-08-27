@@ -13,7 +13,8 @@ message SignUpResponse {
 }
 
 message SignInResponse {
-    SellerService.v1.types.TokenPair tokens = 1;
+    string id = 1;
+    SellerService.v1.types.TokenPair tokens = 2;
 }
 
 message RefreshTokensResponse {
